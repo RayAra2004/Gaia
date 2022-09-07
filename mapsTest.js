@@ -34,7 +34,7 @@ function initMap(){
     let mapsOptions = {
         center: {lat: -34.397, lng: 150.644},
         zoom: 8,
-        //disableDefaultUI: true,
+        //disableDefaultUI: true,testa
         //zoomControl: false,
         //streetViewControl: false,
         mapTypeId: 'roadmap' // roadmap, satellite, hybrid, terrain
