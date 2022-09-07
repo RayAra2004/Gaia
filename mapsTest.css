@@ -1,0 +1,3 @@
+html, body{ height: 100%; margin:0; padding:0;}
+#map { height: 90%;background: #ddd;}
+#mapType { position: relative; left: 600px; top: 750px;}
