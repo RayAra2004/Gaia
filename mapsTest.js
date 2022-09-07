@@ -34,11 +34,14 @@ function initMap(){
     let mapsOptions = {
         center: {lat: -34.397, lng: 150.644},
         zoom: 8,
+        //disableDefaultUI: true,
+        //zoomControl: false,
+        //streetViewControl: false,
         mapTypeId: 'roadmap' // roadmap, satellite, hybrid, terrain
     }
     map = new google.maps.Map(document.getElementById('map'), mapsOptions);
 
-    map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
+    //map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
 }
 
 /* map.mapTypes.set(
