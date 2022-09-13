@@ -42,7 +42,7 @@ function initMap(){
     }
     map = new google.maps.Map(document.getElementById('map'), mapsOptions);
     const centerControl = new CenterControl(map);
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push[centerControl.controlDiv];
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControl.controlDiv);
 
     //map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
 }
