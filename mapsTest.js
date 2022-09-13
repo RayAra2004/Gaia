@@ -39,6 +39,10 @@ function initMap(){
     map = new google.maps.Map(document.getElementById('map'), mapsOptions);
 
     map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
+
+    var imported = document.createElement('script');
+    imported.src = 'controles-customizados.js';
+    document.head.appendChild(imported);
 }
 
 /* map.mapTypes.set(
