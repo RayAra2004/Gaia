@@ -1,3 +1,4 @@
+import { CenterControl } from 'controles-customizados.js'
 let map;
 let button = document.querySelector('#mapType');
 let i =0;
@@ -37,12 +38,11 @@ function initMap(){
         mapTypeId: 'roadmap' // roadmap, satellite, hybrid, terrain
     }
     map = new google.maps.Map(document.getElementById('map'), mapsOptions);
+    const centerControl = new CenterControl(map);
+    map.controls[google.maps.ControlPosition.TOP_CENTER].pu
+    //map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
 
-    map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
 
-    var imported = document.createElement('script');
-    imported.src = 'controles-customizados.js';
-    document.head.appendChild(imported);
 }
 
 /* map.mapTypes.set(
