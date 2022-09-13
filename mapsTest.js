@@ -45,7 +45,40 @@ function initMap(){
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControl.controlDiv);
 
     //map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
+
+    map.addListener('zoom_changed', function() {
+      console.log('mudou o zoom');
+    })
+
+    map.addListener('dblclick', function() {
+      console.log('deu doubleClick');
+    })
+
+    map.addListener('click', function(e) {
+      var clickPosition = e.latLgn;
+    })
+
+    map.addListener('position', function() {
+      console.log('mudou a posição');
+    })
+
+    var marker = new google.maps.Marker({
+      position: clickPosition,
+      map: map,
+      title: 'Centro',
+      //label: 'F',
+      //icon: exibi um ícone diferente
+      animation: google.maps.Animation.DROP,
+      draggable:  true
+    });
+
+    // remove o marcador
+    //marker.setMap(null);
+
+
 }
+
+//
 const centerMap = {lat: -3.716816, lng: -38.519115};
 
 class CenterControl{
@@ -58,6 +91,7 @@ class CenterControl{
         this.controlUI.style.border = '2px solid #ebebeb';
         this.controlUI.style.borderRadius = '3ox';
         this.controlUI.style.padding = '6px';
+        this.controlUI.style.cursor = 'pointer'
         this.controlUI.title = 'Centralizar mapa';
 
         this.controlDiv.appendChild(this.controlUI);
@@ -69,10 +103,15 @@ class CenterControl{
         this.controlText.innerHTML = 'Centralizar';
 
         this.controlUI.appendChild(this.controlText);
+
+        this.controlUI.addEventListener('click', () =>{
+            //map.setCenter(centerMap);
+            map.panTo(centerMap);
+        })
     }
 }
-
-/* map.mapTypes.set(
+/*
+map.mapTypes.set(
     "coordinate",
     new CoordMapType(new google.maps.Size(256, 256))
   );
