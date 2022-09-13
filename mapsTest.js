@@ -1,4 +1,4 @@
-import { CenterControl } from 'controles-customizados.js'
+import { CenterControl } from './controles-customizados.js'
 let map;
 let button = document.querySelector('#mapType');
 let i =0;
