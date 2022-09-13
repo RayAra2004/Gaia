@@ -45,7 +45,7 @@ function initMap(){
     "coordinate",
     new CoordMapType(new google.maps.Size(256, 256))
   );
-
+teste recposs
   class CoordMapType {
   tileSize: google.maps.Size;
   maxZoom = 19;
