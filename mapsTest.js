@@ -73,7 +73,7 @@ function initMap(){
       });
     })
 
-    var marker = new google.maps.Marker({
+    /*var marker = new google.maps.Marker({
       position: clickPosition,
       map: map,
       title: 'Centro',
@@ -81,7 +81,7 @@ function initMap(){
       //icon: exibi um ícone diferente
       animation: google.maps.Animation.DROP,
       draggable:  true
-    });
+    });*/
 
     // remove o marcador
     //marker.setMap(null);
