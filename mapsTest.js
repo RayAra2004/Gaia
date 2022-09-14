@@ -54,12 +54,23 @@ function initMap(){
       console.log('deu doubleClick');
     })
 
-    map.addListener('click', function(e) {
-      var clickPosition = e.latLgn;
-    })
 
     map.addListener('position', function() {
       console.log('mudou a posição');
+    })
+  
+
+    map.addListener('click', function(e) {
+      var clickPosition = e.latLgn;
+      new google.maps.Marker({
+        position: clickPosition,
+        map: map,
+        title: 'Centro',
+        //label: 'F',
+        //icon: exibi um ícone diferente
+        animation: google.maps.Animation.DROP,
+        draggable:  true
+      });
     })
 
     var marker = new google.maps.Marker({
