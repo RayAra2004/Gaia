@@ -32,16 +32,33 @@ class MapaTeste{
 }
 
 function initMap(){
-    let mapsOptions = {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8,
-        //disableDefaultUI: true,
-        //zoomControl: false,
-        //streetViewControl: false,
-        mapTypeId: 'roadmap' // roadmap, satellite, hybrid, terrain
-    }
-    map = new google.maps.Map(document.getElementById('map'), mapsOptions);
-    const centerControl = new CenterControl(map);
+  const IFESSERRA = {lat: -20.1969635, lng: -40.2166089};
+  const PRAIAFACHOS = {lat: -20.2038752, lng: -40.1968335};
+  const PRAIABICANGA = {lat: -20.2083834, lng: -40.2041667};
+
+  let mapsOptions = {
+      center: IFESSERRA,
+      zoom: 15,
+      //disableDefaultUI: true,
+      //zoomControl: false,
+      //streetViewControl: false,
+      mapTypeId: 'roadmap' // roadmap, satellite, hybrid, terrain
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapsOptions);
+
+  const poly = new google.maps.Polyline({
+    path: [IFESSERRA, PRAIAFACHOS, PRAIABICANGA, IFESSERRA],
+    strokeColor: '#FF0000',
+    strokeWeight: 5,
+    strokeOpacity: 1,
+    //map: map
+  });
+
+  poly.setMap(map);
+
+
+
+    /*const centerControl = new CenterControl(map);
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControl.controlDiv);
 
     //map.mapTypes.set('papaTeste', new MapaTeste(new google.maps.Size(256, 256)));
@@ -61,6 +78,7 @@ function initMap(){
   
 
     map.addListener('click', function(e) {
+      console.log(e);
       var clickPosition = e.latLgn;
       new google.maps.Marker({
         position: clickPosition,
@@ -84,7 +102,7 @@ function initMap(){
     });*/
 
     // remove o marcador
-    //marker.setMap(null);
+    //marker.setMap(null);*/
 
 
 }
